@@ -13,7 +13,7 @@ export default function CreateQuiz() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [timeLimit, setTimeLimit] = useState(15);
-  const [questions, setQuestions] = useState([
+  const [questions, setQuestions] = useState(() => [
     { id: Date.now().toString(), type: 'mcq', text: '', options: ['', '', '', ''], correctOptionIndex: 0 }
   ]);
   const [isSubmitting, setIsSubmitting] = useState(false);

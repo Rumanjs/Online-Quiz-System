@@ -36,6 +36,7 @@ export default function QuizAttempt() {
     fetchQuiz();
 
     return () => clearQuiz();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [quizId]);
 
   useEffect(() => {
@@ -46,12 +47,14 @@ export default function QuizAttempt() {
     }, 1000);
 
     return () => clearInterval(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentQuiz]);
 
   useEffect(() => {
     if (currentQuiz && timeRemaining <= 0) {
       handleFinalSubmit();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [timeRemaining, currentQuiz]);
 
   const handleFinalSubmit = async () => {
@@ -91,8 +94,8 @@ export default function QuizAttempt() {
   };
 
   useEffect(() => {
-    const preventAction = (e) => {
-        // e.preventDefault();
+    const preventAction = (_e) => {
+        // _e.preventDefault();
         // Disabling strict prevention for demo. Un-comment to actually block right click
     };
     document.addEventListener('contextmenu', preventAction);

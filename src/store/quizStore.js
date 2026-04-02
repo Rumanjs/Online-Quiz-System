@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-export const useQuizStore = create((set, get) => ({
+export const useQuizStore = create((set) => ({
   currentQuiz: null,
   answers: {}, // { questionId: answer }
   timeRemaining: 0,
